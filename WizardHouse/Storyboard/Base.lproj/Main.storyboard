@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ds1-LP-SbA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wizard Table View Controller-->
+        <scene sceneID="BtR-MK-w63">
+            <objects>
+                <tableViewController id="Ds1-LP-SbA" customClass="WizardTableViewController" customModule="WizardHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aMB-cs-G5T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="wRR-aJ-S7B">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem id="30g-LB-g6J">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="1H7-qa-0ro">
+                                        <connections>
+                                            <action selector="createWizardButtonTapped:" destination="Ds1-LP-SbA" id="8gd-6d-aDf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wizardCell" rowHeight="91" id="SCO-7n-Spd" customClass="WizardTableViewCell" customModule="WizardHouse" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SCO-7n-Spd" id="P69-0l-JvE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gna-xh-C9B">
+                                            <rect key="frame" x="16" y="35" width="54.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95a-X5-3Ap">
+                                            <rect key="frame" x="314" y="4" width="84" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="95a-X5-3Ap" secondAttribute="height" multiplier="1:1" id="m4W-bv-DaT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st7-sm-EYk">
+                                            <rect key="frame" x="333" y="30" width="46" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="2a0-1C-9jI"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="wizardCrestButtonTapped:" destination="SCO-7n-Spd" eventType="touchUpInside" id="VaR-li-RfW"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="95a-X5-3Ap" secondAttribute="trailing" constant="16" id="6Oi-9Z-G5z"/>
+                                        <constraint firstItem="Gna-xh-C9B" firstAttribute="leading" secondItem="P69-0l-JvE" secondAttribute="leading" constant="16" id="Clj-Mt-g2C"/>
+                                        <constraint firstItem="st7-sm-EYk" firstAttribute="centerX" secondItem="95a-X5-3Ap" secondAttribute="centerX" id="Efu-Zb-eos"/>
+                                        <constraint firstItem="Gna-xh-C9B" firstAttribute="centerY" secondItem="P69-0l-JvE" secondAttribute="centerY" id="OYs-MM-nVd"/>
+                                        <constraint firstItem="st7-sm-EYk" firstAttribute="centerY" secondItem="95a-X5-3Ap" secondAttribute="centerY" id="Pap-Ta-PQN"/>
+                                        <constraint firstItem="95a-X5-3Ap" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gna-xh-C9B" secondAttribute="trailing" constant="8" symbolic="YES" id="Vew-JE-vMy"/>
+                                        <constraint firstItem="95a-X5-3Ap" firstAttribute="top" secondItem="P69-0l-JvE" secondAttribute="top" constant="4" id="lpg-Ue-5Uj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="st7-sm-EYk" secondAttribute="trailing" constant="15" id="oM9-4F-cpP"/>
+                                        <constraint firstItem="st7-sm-EYk" firstAttribute="top" secondItem="P69-0l-JvE" secondAttribute="topMargin" constant="19" id="sII-Cb-Jm7"/>
+                                        <constraint firstAttribute="bottom" secondItem="95a-X5-3Ap" secondAttribute="bottom" constant="4" id="vhz-kT-w3X"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="wizardImageView" destination="95a-X5-3Ap" id="j5o-T9-ewE"/>
+                                    <outlet property="wizardNameLabel" destination="Gna-xh-C9B" id="hHU-Qk-orc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ds1-LP-SbA" id="C8w-WX-SLg"/>
+                            <outlet property="delegate" destination="Ds1-LP-SbA" id="k0Y-G1-Wvn"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlu-hG-YBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459.4202898550725" y="35.491071428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
